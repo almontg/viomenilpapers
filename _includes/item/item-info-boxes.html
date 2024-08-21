@@ -30,7 +30,7 @@
           Metadata
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
             {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
                 <dl>
