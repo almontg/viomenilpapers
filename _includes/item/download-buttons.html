@@ -18,7 +18,7 @@
         {% if page.display_template == 'video' and page.object_location contains 'vimeo' %}View on Vimeo{% elsif page.display_template == 'video' and page.object_location contains 'youtu' %}View on YouTube{% elsif page.display_template == 'record'%}Link to Object{% else %}Download {{ page.format | split: '/' | last | default: page.display_template | upcase }}{% endif %}
     </a>{% endif %}
 </div>
-{% if page.object_transcript %}
+<!-- {% if page.object_transcript %}
 <div class="collapse mt-3" id="collapseTranscript">
     <div class="card card-body text-start">
         {% assign transcript_type = page.object_transcript | slice: 0,1 %}
@@ -31,4 +31,4 @@
         {% endif %}
     </div>
 </div>
-{% endif %} 
+{% endif %} -->
