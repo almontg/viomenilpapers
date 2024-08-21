@@ -1,0 +1,38 @@
+{& comment %}
+    Adds item metadata, transcription, and translation collapsible boxes
+{%- endcomment -%}
+
+<div class="accordian" id="item-info-boxes">
+    <div class="accordian-item">
+        <h2 class="accordian-item" id="headingMetadata">
+            <button class="accordian-button" type="button" data-bs-toggle="collapse" data-bs-target="collapseMetadata" aria-expanded="true" aria-controls="collapseMetadata">
+                View Metadata
+            </button>
+        </h2>
+    </div>
+    <div id="collapseMetadata" class="accordian-collapse collapse show" aria-labelledby="headingMetadata">
+        <div class="accordian-body">
+            SOMe metadacatatataf
+        </div>
+    </div>
+    {% if page.object_transcript}
+    <div class="accordian-item">
+        <h2 class="accordian-item" id="headingTranscript">
+            <button class="accordian-button" type="button" data-bs-toggle="collapse" data-bs-target="collapseTranscript" aria-expanded="false" aria-controls="collapseTranscript">
+                View Transcript
+            </button>
+        </h2>
+    </div>
+    <div id="collapseTranscript" class="accordian-collapse collapse" aria-labelledby="headingTranscript">
+        <div class="accordian-body">
+        {% assign transcript_type = page.object_transcript | slice: 0,1 %}
+        {% if transcript_type == '/' %}
+        {% assign transcript_location = page.object_transcript | remove_first: '/' %}
+        {% assign transcript = site.pages | where: 'path', transcript_location | first %}
+        {{ transcript.content | markdownify }}
+        {% else %}
+        {{ page.object_transcript | markdownify }}
+        {% endif %}
+        </div>
+    </div>
+</div>
