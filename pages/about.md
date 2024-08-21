@@ -8,26 +8,14 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %} 
+{% include feature/jumbotron.html objectid="/assets/img/siteheader.jpg" %}
 
-{% include feature/nav-menu.html sections="About CollectionBuilder CSV;About the About Page" %}
+## About Washington's Surveys
 
-## About CollectionBuilder CSV
+Lorem ipsum odor amet, consectetuer adipiscing elit. Nibh eget egestas dictum tincidunt vivamus litora laoreet. Et nullam erat aliquet curae nec fames laoreet eu mus. Purus sagittis netus a posuere efficitur ex ut. Magna turpis nullam aenean luctus a hac. Luctus tempus ullamcorper dolor maecenas proin potenti. Mus augue rhoncus luctus porttitor himenaeos turpis. Class dis maecenas egestas penatibus turpis imperdiet. Neque arcu himenaeos non dis ullamcorper penatibus aptent quis et.
 
-This demo collection features items from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital/), and is build using [CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv).
+{% include feature/image.html objectid="p16829coll21-21" width="75" %} 
 
-CollectionBuilder-CSV is a "Stand Alone" template for creating digital collection and exhibit websites using Jekyll, given:
+Commodo donec porttitor suscipit ullamcorper malesuada nascetur amet. Dictumst ornare ridiculus torquent bibendum cras. Viverra hendrerit elementum conubia aenean arcu tristique enim urna fames. Montes etiam morbi ipsum porta ipsum taciti. Iaculis habitant penatibus at cubilia sodales magna egestas netus. Rhoncus orci torquent ligula natoque urna elementum ullamcorper id. Duis pulvinar torquent donec nibh feugiat phasellus sed. Posuere integer eget sodales eleifend in luctus aptent torquent. Proin dolor ut blandit iaculis lacinia nostra fames conubia ad. Rhoncus maximus efficitur aenean sapien magna et natoque pharetra.
 
-- a CSV of collection metadata
-- a folder of images, PDFs, audio, or video files
-
-Driven by your collection metadata, the template generates engaging visualizations to browse and explore your objects.
-The resulting static site can be hosted on any basic web server.
-
-[CollectionBuilder](https://github.com/CollectionBuilder/) is an set of open source tools for creating digital collection and exhibit websites that are driven by metadata and powered by modern static web technology.
-See [CB Docs](https://collectionbuilder.github.io/cb-docs/) for detailed information.
-
-{% include feature/image.html objectid="demo_001" width="75" %} 
-
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+{% include feature/cloud.html fields="subject" min="1" background="dark" %}
