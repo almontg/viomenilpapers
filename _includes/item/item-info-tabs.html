@@ -13,7 +13,7 @@
     {% endif %}
 </ul>
 
-  <div class="tab-content py-3" id="myTabContent">
+  <div class="tab-content py-3 overflow-auto h-75"  id="myTabContent">
     <div class="tab-pane fade show active" id="metadatas" role="tabpanel" aria-labelledby="metadatas-tab">
         {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
       <dl>
