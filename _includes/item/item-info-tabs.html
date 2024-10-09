@@ -1,0 +1,51 @@
+{% comment %}
+    Adds item metadata and transcription tabs
+{%- endcomment -%}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" id="metadatas-tab" data-bs-toggle="tab" data-bs-target="#metadatas" type="button" role="tab" aria-controls="metadatas" aria-selected="true">Metadata</button>
+    </li>
+    {% if page.object_transcript %}
+    <li class="nav-item">
+      <button class="nav-link" id="transcript-tab" data-bs-toggle="tab" data-bs-target="#transcript" type="button" role="tab" aria-controls="transcript" aria-selected="false">Transcript</button>
+    </li>
+    {% endif %}
+</ul>
+
+  <div class="tab-content py-3" id="myTabContent">
+    <div class="tab-pane fade show active" id="metadatas" role="tabpanel" aria-labelledby="metadatas-tab">
+        {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display_name != nil' -%}
+      <dl>
+          {% for f in fields %}{% if page[f.field] %}
+          <dt class="field">{{ f.display_name }}:</dt>
+          <dd class="field-value">
+              {% if f.browse_link == "true" %}
+              {% assign topics = page[f.field] | split: ";" %}
+              {% for t in topics %}
+              <a class="me-3" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+              {% endfor %}
+              {% elsif f.external_link == "true" %}
+              <a href="{{ page[f.field] }}" target="_blank" rel="noopener">{{ page[f.field] }}</a>
+              {% else %}
+              {{ page[f.field] | replace: '""','"' }}{% endif %}
+          </dd>
+          {% endif %}{% endfor %}
+      </dl>
+    </div>
+    <div class="tab-pane fade" id="transcript" role="tabpanel" aria-labelledby="transcript-tab">
+        {% if page.object_transcript %}
+      {% assign transcript_type = page.object_transcript | slice: 0,1 %}
+            {% if transcript_type == '/' %}
+            {% assign transcript_location = page.object_transcript | remove_first: '/' %}
+            {% assign transcript = site.pages | where: 'path', transcript_location | first %}
+            {{ transcript.content | markdownify }}
+            {% else %}
+            {{ page.object_transcript | markdownify }}
+        {% endif %}
+    {% endif %}
+    </div>
+  </div>
+
+
+    
