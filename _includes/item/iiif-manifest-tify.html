@@ -1,0 +1,17 @@
+{% comment %}
+
+    Embed TIFY to load item from an IIIF manifest file
+    This include assumes that Item's object_location field is a relative link or direct url to a IIIF manifest json file. e.g. https://wellcomelibrary.org/iiif/b18035723/manifest 
+    If you are using an external manifest url, you may encounter CORS policy error if the server hosting the manifest is not set up correctly--one workaround is to download the json file, add to your "objects" folder, and use a relative link, e.g. "objects/book-manifest1.json". You do not need the images, just the manifest file!
+
+{% endcomment %}
+<script src="https://cdn.jsdelivr.net/npm/tify@0.31.0/dist/tify.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tify@0.31.0/dist/tify.css">
+
+<div id="tify" style="width: 100%; height: 668px;"></div>
+<script>
+    new Tify({
+      container: '#tify',
+      manifestUrl: {{ page.object_location | relative_url | jsonify }},
+    })
+    </script>
