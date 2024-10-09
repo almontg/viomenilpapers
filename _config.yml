@@ -18,14 +18,14 @@ source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
 # SITE SETTINGS
 #
 # title of site appears in banner
-title: George Washington Surveys
+title: The Correspondence of Baron de Vioménil 
 # tagline, a short phrase that will appear throughout the site in the top banner
 #tagline: Digital Collection Magic with Static Web Technologies
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
-description: "This collection contains selected surveys executed by George Washington. Some were done for other landowners, some for himself. Additional manuscripts can be found the George Washington Collection which is available in the Special Collections and Archives Catalog.  To search the collection finding aid, please visit: archives.mountvernon.org."
+description: "The Correspondence of Baron de Vioménil Project is part of a grant funded effort at the Washington Library to transcribe and translate the manuscript papers of Vioménil, a French officer who served during the American War for Independence."
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
-keywords: history;george washington;mount vernon;land surveying
+keywords: history;viomenil;mount vernon;american revolution
 # creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
 author: Mount Vernon Center for Digital History
 
@@ -34,7 +34,7 @@ author: Mount Vernon Center for Digital History
 #
 # Set the metadata for your collection (the name of the CSV file in your _data directory that describes the objects in your collection) 
 # Use the filename of your CSV **without** the ".csv" extension! E.g. _data/demo-metadata.csv --> "demo-metadata"
-metadata: surveycsvmetadata
+metadata: viomenil-highlights-cb-metadata
 # page generation settings [optional!]
 # [optional: only used if you need to tweak CB defaults or generate from more than one data file]
 # page_gen:
