@@ -34,18 +34,18 @@
       </dl>
     </div>
     <div class="tab-pane fade" id="transcript" role="tabpanel" aria-labelledby="transcript-tab">
-        {% if page.object_transcript %}
-      {% assign transcript_type = page.object_transcript | slice: 0,1 %}
-            {% if transcript_type == '/' %}
-            {% assign transcript_location = page.object_transcript | remove_first: '/' %}
-            {% assign transcript = site.pages | where: 'path', transcript_location | first %}
-            {{ transcript.content | markdownify }}
-            {% else %}
-            {{ page.object_transcript | markdownify }}
-        {% endif %}
-    {% endif %}
+      {% if page.object_transcript %}
+        {% assign transcript_type = page.object_transcript | slice: 0,1 %}
+        {% if transcript_type == '/' %}
+          {% assign transcript_location = page.object_transcript | remove_first: '/' %}
+          {% assign transcript = site.pages | where: 'path', transcript_location | first %}
+          {{ transcript.content | markdownify }}
+        {% else %}
+         {{ page.object_transcript | markdownify }}
+      {% endif %}
+      {% endif %}
     </div>
   </div>
 
 
-    
+    <!--  -->

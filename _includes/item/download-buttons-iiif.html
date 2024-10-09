@@ -15,17 +15,3 @@
     <a href="{{ '/map.html?location=' | append: page.latitude  | append: ',' | append: page.longitude | append: '&marker=' | append: page.objectid | relative_url }}" class="btn btn-outline-primary">View on Map</a>{% endif %}
     <!--<a href="{{page.link}}" class="btn btn-outline-primary">View on ContentDM</a> -->
 </div>
-<!-- {% if page.object_transcript %}
-<div class="collapse mt-3" id="collapseTranscript">
-    <div class="card card-body text-start">
-        {% assign transcript_type = page.object_transcript | slice: 0,1 %}
-        {% if transcript_type == '/' %}
-        {% assign transcript_location = page.object_transcript | remove_first: '/' %}
-        {% assign transcript = site.pages | where: 'path', transcript_location | first %}
-        {{ transcript.content | markdownify }}
-        {% else %}
-        {{ page.object_transcript | markdownify }}
-        {% endif %}
-    </div>
-</div>
-{% endif %} -->
